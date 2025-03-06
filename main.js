@@ -1,13 +1,12 @@
+// Memilih elemen audio
+var audio = document.getElementById("audio");
 
-const audio = document.getElementById('background-audio');
-
-// Memutar audio saat halaman dimuat
+// Memutar audio secara otomatis saat halaman web dimuat
 window.onload = function() {
   audio.play();
-}
+};
 
-// Memastikan audio terus berjalan di latar belakang
-audio.addEventListener('ended', function() {
+// Mengatasi masalah autoplay di beberapa browser
+audio.addEventListener("canplay", function() {
   audio.play();
 });
-

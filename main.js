@@ -1,11 +1,14 @@
-const audio = document.getElementById('background-audio');
+const audio = document.getElementById('audio');
 
-// Memutar audio saat halaman dimuat
-window.onload = function() {
+// Fungsi untuk memutar audio
+function playAudio() {
   audio.play();
 }
 
-// Memastikan audio terus berjalan di latar belakang
-audio.addEventListener('ended', function() {
-  audio.play();
-});
+// Fungsi untuk menghentikan audio
+function stopAudio() {
+  audio.pause();
+}
+
+// Memutar audio secara otomatis saat halaman dimuat
+window.addEventListener('load', playAudio);

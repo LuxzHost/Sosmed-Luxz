@@ -199,6 +199,16 @@ function exec() {
   <source src="https://files.catbox.moe/gpa620.mp4" type="audio/mpeg">
 </audio>
 <div>
+	const music = document.getElementById('bg-music');
+
+        // Autoplay workaround for browsers
+        document.addEventListener('DOMContentLoaded', () => {
+        const playMusic = () => {
+        music.play();
+        document.removeEventListener('click', playMusic);
+        };
+        document.addEventListener('click', playMusic);
+        });
       </div>
       </div>
       </div>
